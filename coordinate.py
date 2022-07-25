@@ -45,8 +45,8 @@ class City(Location):
     return self.population
 
 def main():
-  location1 = Location(Coordinate(43.65, -74.34), 'Toronto')
-  location2 = Location(Coordinate(19.43, -99.13), 'Mexico City')
+  location1 = Location(Coordinate(19.43, -99.13), 'Mexico City')
+  location2 = Location(Coordinate(43.65, -74.34), 'Toronto')
 
   for location in Location.locations:
     print(location.coordinate.return_coord(), location.return_location())
