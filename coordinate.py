@@ -14,18 +14,18 @@ Now create another class Location which has two properties called coordinate and
 ->Each time an instance of Location is created,
 a class Coordinate should be created that gets passed in the coordinates that should be given as arguments when creating Location.<-
 Further, you should create a return_location method that returns the name of the location.
-->An array locations which is a class variable of Location stores every Location that is created.
+An array locations which is a class variable of Location stores every Location that is created.
 """
 class Location:
-  locations = [0] #this here are class variables
+  locations = [] #this here are class variables
   def __init__(self,coordinate,name):#constructor with its arguments
     self.coordinate = coordinate #this here are instance variables
+    #or did he meant this?
+    #self.coordinate = coordinate(latitude,longitude) as a means to be an example of composition
     self.name = name #this here is a property of a class
-    locations.append(self)
-# Instance method to append locations
+    Location.locations.append(self)
 
-
-  def return_location():#method
+  def return_location(self):#method
     return self.name
 
 """
@@ -41,6 +41,18 @@ class City(Location):
     super().__init__(name)
     self.population = population
 
-  def populationCity(self):
+  def popCity(self):
     return self.population
 
+def main():
+  location1 = Location(Coordinate(43.65, -74.34), 'Toronto')
+  location2 = Location(Coordinate(19.43, -99.13), 'Mexico City')
+
+  for location in Location.locations:
+    print(location.coordinate.return_coord(), location.return_location())
+
+  print(Location.return_location(location1))#print name of the city
+
+
+if __name__ == "__main__":
+  main()
