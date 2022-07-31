@@ -21,7 +21,8 @@ class Location:
   def __init__(self,coordinate,name):#constructor with its arguments
     self.coordinate = coordinate #this here are instance variables
     #or did he meant this?
-    #self.coordinate = coordinate(latitude,longitude) as a means to be an example of composition
+    #def __init__(self,latitude,longitude,name):
+    #self.coordinate = Coordinate(latitude, longitude) #as a means to be an example of composition (slide 16)
     self.name = name #this here is a property of a class
     Location.locations.append(self)
 
@@ -48,6 +49,7 @@ def main():
   location1 = Location(Coordinate(19.43, -99.13), 'Mexico City')
   location2 = Location(Coordinate(43.65, -74.34), 'Toronto')
 
+
   for location in Location.locations:
     print(location.coordinate.return_coord(), location.return_location())
 
@@ -56,3 +58,4 @@ def main():
 
 if __name__ == "__main__":
   main()
+
