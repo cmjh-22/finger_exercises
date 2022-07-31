@@ -13,15 +13,16 @@ class matriculation:
     def mirror():
         pass
 
-class course:
-    def __init__(self,course):
-        #super().__init__()
+class course(matriculation):
+    course_li= list()
+    def __init__(self,number,course):
+        super().__init__(number)
         self.course = course
         self.course_li.append(self)
     @classmethod
     def show(cls):
         for subject in course.course_li:
-            print(subject.course, end= " ")
+            print(subject.course,subject.number, end= " ")
         print("\n")
 
 def main():
@@ -33,8 +34,8 @@ def main():
         print(student.number, end= " ")
     """
     matriculation.show() #here I am calling the class method
-    c1 = course("Math")
-    c2 = course("History")
+    c1 = course(3,"Math")
+    c2 = course(2,"History")
     #this is how you print the content: print(c2.course)
     course.show()
 
